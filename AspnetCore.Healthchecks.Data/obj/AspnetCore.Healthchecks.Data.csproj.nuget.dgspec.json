@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
+        "projectName": "AspnetCore.Healthchecks.Data",
+        "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
+        "packagesPath": "C:\\Users\\thiago.chagas\\.nuget\\packages\\",
+        "outputPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thiago.chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
+                "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj",
+        "projectName": "AspnetCore.Healthchecks.Domain",
+        "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj",
+        "packagesPath": "C:\\Users\\thiago.chagas\\.nuget\\packages\\",
+        "outputPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thiago.chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
