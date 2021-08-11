@@ -1,4 +1,5 @@
-﻿using AspnetCore.Healthchecks.Domain.Entities;
+﻿using AspnetCore.Healthchecks.Domain.Configurations;
+using AspnetCore.Healthchecks.Domain.Entities;
 using AspnetCore.Healthchecks.Healthchecks;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
@@ -13,12 +14,17 @@ namespace AspnetCore.Healthchecks.Configurations
 {
     public static class HealthchecksExtensions
     {
+        const string MEMORY_HEALTHCHECK = "Memory info";
+        const string SQLSERVER_HEALTHCHECK = "SqlServer Database";
+        const string EXTERNALSERVICE_HEALTHCHECK = "Address Service";
+
         public static IServiceCollection ConfigureHealthChecks(this IServiceCollection services)
         {
             #region healthchecks customizados
             services.AddHealthChecks()
-           .AddCheck<SqlServerHealthcheck>("SqlServer Database")
-           .AddCheck<AddressExternalServiceHealthcheck>("Address Service");
+                    .AddGCInfoCheck(MEMORY_HEALTHCHECK)
+                    .AddCheck<SqlServerHealthcheck>(SQLSERVER_HEALTHCHECK)
+                    .AddCheck<AddressExternalServiceHealthcheck>(EXTERNALSERVICE_HEALTHCHECK);
             #endregion
 
             #region healthcheckUI
@@ -51,6 +57,9 @@ namespace AspnetCore.Healthchecks.Configurations
                                     Version = "V1",
                                     Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                                     Status = report.Status.ToString(),
+                                    AllocatedMemory = GCInfoOptions.AllocatedMemory,
+                                    TotalAvailableMemory = GCInfoOptions.TotalAvailableMemory,
+                                    MaxMemory = GCInfoOptions.MaxMemory
                                 }
                             });
 
