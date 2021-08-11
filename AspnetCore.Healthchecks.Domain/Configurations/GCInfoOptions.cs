@@ -8,5 +8,11 @@
         public static string MaxMemory { get; set; }
 
         public GCInfoOptions() { }
+
+        public static void DisposeGcInfoOptions()
+        {
+            AllocatedMemory = string.Empty;
+            TotalAvailableMemory = string.Empty;
+        }
     }
 }

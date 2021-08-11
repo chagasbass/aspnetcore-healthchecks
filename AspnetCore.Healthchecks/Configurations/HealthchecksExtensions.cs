@@ -63,6 +63,8 @@ namespace AspnetCore.Healthchecks.Configurations
                                 }
                             });
 
+                        GCInfoOptions.DisposeGcInfoOptions();
+
                         context.Response.ContentType = MediaTypeNames.Application.Json;
                         await context.Response.WriteAsync(result);
                     }
