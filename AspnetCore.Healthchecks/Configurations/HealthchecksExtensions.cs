@@ -17,6 +17,7 @@ namespace AspnetCore.Healthchecks.Configurations
         const string MEMORY_HEALTHCHECK = "Memory info";
         const string SQLSERVER_HEALTHCHECK = "SqlServer Database";
         const string EXTERNALSERVICE_HEALTHCHECK = "Address Service";
+        const string SELF_HEALTHCHECK = "self";
 
         public static IServiceCollection ConfigureHealthChecks(this IServiceCollection services)
         {
@@ -24,7 +25,9 @@ namespace AspnetCore.Healthchecks.Configurations
             services.AddHealthChecks()
                     .AddGCInfoCheck(MEMORY_HEALTHCHECK)
                     .AddCheck<SqlServerHealthcheck>(SQLSERVER_HEALTHCHECK)
-                    .AddCheck<AddressExternalServiceHealthcheck>(EXTERNALSERVICE_HEALTHCHECK);
+                    .AddCheck<AddressExternalServiceHealthcheck>(EXTERNALSERVICE_HEALTHCHECK)
+                    .AddSelfCheck(SELF_HEALTHCHECK);
+
             #endregion
 
             #region healthcheckUI
