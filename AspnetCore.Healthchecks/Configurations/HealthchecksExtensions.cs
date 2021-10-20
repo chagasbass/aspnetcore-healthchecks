@@ -6,27 +6,25 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System;
+using System.Linq;
 using System.Net.Mime;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 
 namespace AspnetCore.Healthchecks.Configurations
 {
     public static class HealthchecksExtensions
     {
-        const string MEMORY_HEALTHCHECK = "Memory info";
-        const string SQLSERVER_HEALTHCHECK = "SqlServer Database";
-        const string EXTERNALSERVICE_HEALTHCHECK = "Address Service";
-        const string SELF_HEALTHCHECK = "self";
-
         public static IServiceCollection ConfigureHealthChecks(this IServiceCollection services)
         {
             #region healthchecks customizados
             services.AddHealthChecks()
-                    .AddGCInfoCheck(MEMORY_HEALTHCHECK)
-                    .AddCheck<SqlServerHealthcheck>(SQLSERVER_HEALTHCHECK)
-                    .AddCheck<AddressExternalServiceHealthcheck>(EXTERNALSERVICE_HEALTHCHECK)
-                    .AddSelfCheck(SELF_HEALTHCHECK);
+                    .AddGCInfoCheck(HealthNames.MEMORY_HEALTHCHECK)
+                    .AddCheck<SqlServerHealthcheck>(HealthNames.SQLSERVER_HEALTHCHECK)
+                    .AddCheck<AddressExternalServiceHealthcheck>(HealthNames.EXTERNALSERVICE_HEALTHCHECK)
+                    .AddSelfCheck(HealthNames.SELF_HEALTHCHECK);
 
             #endregion
 
@@ -45,33 +43,66 @@ namespace AspnetCore.Healthchecks.Configurations
         {
             app.UseHealthChecks("/app-status");
             app.UseHealthChecks("/app-status-json",
-                new HealthCheckOptions()
+                 new HealthCheckOptions()
+                 {
+                     ResponseWriter = async (context, report) =>
+                     {
+                         string result = GetHealthStatusData(report);
+
+                         context.Response.ContentType = MediaTypeNames.Application.Json;
+
+                         await context.Response.WriteAsync(result);
+
+                     }
+                 });
+        }
+
+        private static string GetHealthStatusData(HealthReport report)
+        {
+            var healthcheckInformation = new HealthInformation
+            {
+                Name = "Application HealthChecks",
+                Version = "V1",
+                Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            };
+
+            var entries = report.Entries.ToList();
+
+            foreach (var x in entries)
+            {
+                if (x.Key.Equals(HealthNames.MEMORY_HEALTHCHECK))
                 {
-                    ResponseWriter = async (context, report) =>
+                    healthcheckInformation.MemoryHealth = new HealthDataMemory()
                     {
-                        var result = JsonSerializer.Serialize(
-                            new
-                            {
-                                Sucesso = true,
-                                Mensagem = "Status da aplicação",
-                                Data = new HealthcheckInformation()
-                                {
-                                    Name = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
-                                    Version = "V1",
-                                    Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                    Status = report.Status.ToString(),
-                                    AllocatedMemory = GCInfoOptions.AllocatedMemory,
-                                    TotalAvailableMemory = GCInfoOptions.TotalAvailableMemory,
-                                    MaxMemory = GCInfoOptions.MaxMemory
-                                }
-                            });
+                        Name = x.Key,
+                        Description = x.Value.Description,
+                        Status = x.Value.Status.ToString(),
+                        AllocatedMemory = GCInfoOptions.AllocatedMemory,
+                        TotalAvailableMemory = GCInfoOptions.TotalAvailableMemory,
+                        MaxMemory = GCInfoOptions.MaxMemory
+                    };
+                }
+                else
+                {
+                    healthcheckInformation.HealthDatas.Add(new HealthData
+                    {
+                        Name = x.Key,
+                        Description = x.Value.Description,
+                        Status = x.Value.Status.ToString()
+                    });
+                }
 
-                        GCInfoOptions.DisposeGcInfoOptions();
+            }
 
-                        context.Response.ContentType = MediaTypeNames.Application.Json;
-                        await context.Response.WriteAsync(result);
-                    }
-                });
+            var serializeOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
+
+            var result = JsonSerializer.Serialize(healthcheckInformation, serializeOptions);
+
+            return result;
         }
 
         public static void UserHealthCheckUi(this IApplicationBuilder app)

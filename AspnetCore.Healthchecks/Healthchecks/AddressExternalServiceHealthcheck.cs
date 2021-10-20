@@ -38,14 +38,20 @@ namespace AspnetCore.Healthchecks.Healthchecks
                 var response = await client.SendAsync(request);
 
                 if (!response.IsSuccessStatusCode)
-                    return HealthCheckResult.Unhealthy();
+                    return new HealthCheckResult(
+               HealthStatus.Unhealthy,
+               description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
             }
             catch
             {
-                return HealthCheckResult.Unhealthy();
+                return new HealthCheckResult(
+                HealthStatus.Unhealthy,
+                description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
             }
 
-            return HealthCheckResult.Healthy();
+            return new HealthCheckResult(
+                HealthStatus.Healthy,
+                description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
         }
     }
 }

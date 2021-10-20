@@ -29,10 +29,14 @@ namespace AspnetCore.Healthchecks.Healthchecks
             }
             catch
             {
-                return HealthCheckResult.Unhealthy();
+                return new HealthCheckResult(
+                HealthStatus.Unhealthy,
+                description: HealthNames.SQLSERVER_DESCRIPTION);
             }
 
-            return HealthCheckResult.Healthy();
+            return new HealthCheckResult(
+               HealthStatus.Healthy,
+               description: HealthNames.SQLSERVER_DESCRIPTION);
         }
     }
 }

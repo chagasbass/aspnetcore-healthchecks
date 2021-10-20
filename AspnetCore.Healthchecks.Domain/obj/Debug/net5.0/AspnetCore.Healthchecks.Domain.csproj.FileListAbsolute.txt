@@ -10,3 +10,15 @@ C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.dll
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\ref\AspnetCore.Healthchecks.Domain.dll
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.pdb
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.csproj.AssemblyReference.cache
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.AssemblyInfoInputs.cache
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.AssemblyInfo.cs
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.csproj.CoreCompileInputs.cache
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.dll
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\ref\AspnetCore.Healthchecks.Domain.dll
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\obj\Debug\net5.0\AspnetCore.Healthchecks.Domain.pdb
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\bin\Debug\net5.0\AspnetCore.Healthchecks.Domain.deps.json
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\bin\Debug\net5.0\AspnetCore.Healthchecks.Domain.dll
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\bin\Debug\net5.0\ref\AspnetCore.Healthchecks.Domain.dll
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks.Domain\bin\Debug\net5.0\AspnetCore.Healthchecks.Domain.pdb

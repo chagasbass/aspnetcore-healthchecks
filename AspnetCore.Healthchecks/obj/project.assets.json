@@ -5787,7 +5787,7 @@
       ]
     },
     "System.Runtime.Serialization.Json/4.3.0": {
-      "sha512": "CpVfOH0M/uZ5PH+M9+Gu56K0j9lJw3M+PKRegTkcrY/stOIvRUeonggxNrfBYLA5WOHL2j15KNJuTuld3x4o9w==",
+      "sha512": "Ma/DVHfRcOcgQFHVGafUrT7hT1IitsnmUjpNZG5xJCYrI/8wfaYKGYNZycxQyl9Nk+9IAJiMJE6RFuavRQ2WEg==",
       "type": "package",
       "path": "system.runtime.serialization.json/4.3.0",
       "files": [
@@ -6981,19 +6981,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thiago.chagas\\.nuget\\packages\\": {}
+    "C:\\Users\\Thiago Chagas\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\AspnetCore.Healthchecks.csproj",
+      "projectUniqueName": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\AspnetCore.Healthchecks.csproj",
       "projectName": "AspnetCore.Healthchecks",
-      "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\AspnetCore.Healthchecks.csproj",
-      "packagesPath": "C:\\Users\\thiago.chagas\\.nuget\\packages\\",
-      "outputPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\obj\\",
+      "projectPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\AspnetCore.Healthchecks.csproj",
+      "packagesPath": "C:\\Users\\Thiago Chagas\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\thiago.chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Thiago Chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7001,17 +7008,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/PlataformaDPVAT/_packaging/RepositorioSeguradoraLider/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj": {
-              "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj"
+            "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj": {
+              "projectPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj"
             },
-            "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
-              "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj"
+            "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
+              "projectPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj"
             }
           }
         }
@@ -7065,7 +7073,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

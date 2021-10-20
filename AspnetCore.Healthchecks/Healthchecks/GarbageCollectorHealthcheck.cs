@@ -29,10 +29,14 @@ namespace AspnetCore.Healthchecks.Healthchecks
 
             if (allocatedMemory > _options.Threshold)
             {
-                return HealthCheckResult.Degraded();
+                return new HealthCheckResult(
+                                              HealthStatus.Degraded,
+                                              description: HealthNames.MEMORY_DESCRIPTION);
             }
 
-            return HealthCheckResult.Healthy();
+            return new HealthCheckResult(
+                                          HealthStatus.Healthy,
+                                          description: HealthNames.MEMORY_DESCRIPTION);
         }
     }
 }

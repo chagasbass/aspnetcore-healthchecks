@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using AspnetCore.Healthchecks.Domain.Configurations;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace AspnetCore.Healthchecks.Healthchecks
         {
             return Task.FromResult(new HealthCheckResult(
                 HealthStatus.Healthy,
-                description: "API up!"));
+                description: HealthNames.SELF_DESCRIPTION));
         }
     }
 }
