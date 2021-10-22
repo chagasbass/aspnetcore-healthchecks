@@ -26,6 +26,7 @@ namespace AspnetCore.Healthchecks.Healthchecks
             GCInfoOptions.MaxMemory = MemoryConverterExtensions.ConvertMemorySize(_options.Threshold);
             GCInfoOptions.AllocatedMemory = MemoryConverterExtensions.ConvertMemorySize(allocatedMemory);
             GCInfoOptions.TotalAvailableMemory = MemoryConverterExtensions.ConvertMemorySize(gcInfo.TotalAvailableMemoryBytes);
+            GCInfoOptions.SetOperationalSystem();
 
             if (allocatedMemory > _options.Threshold)
             {

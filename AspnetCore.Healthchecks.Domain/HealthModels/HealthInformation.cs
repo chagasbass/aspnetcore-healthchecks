@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AspnetCore.Healthchecks.Domain.Entities
+namespace AspnetCore.Healthchecks.Domain.HealthModels
 {
     public class HealthInformation
     {
@@ -9,7 +9,7 @@ namespace AspnetCore.Healthchecks.Domain.Entities
         public string Data { get; set; }
         public string Status { get; set; }
         public List<HealthData> HealthDatas { get; set; }
-        public HealthDataMemory MemoryHealth { get; set; }
+        public HealthDataApplicationMemory ApplicationMemoryHealth { get; set; }
 
         public HealthInformation()
         {

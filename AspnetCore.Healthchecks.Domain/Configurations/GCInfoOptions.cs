@@ -1,4 +1,6 @@
-﻿namespace AspnetCore.Healthchecks.Domain.Configurations
+﻿using System.Runtime.InteropServices;
+
+namespace AspnetCore.Healthchecks.Domain.Configurations
 {
     public class GCInfoOptions
     {
@@ -6,6 +8,9 @@
         public static string AllocatedMemory { get; set; }
         public static string TotalAvailableMemory { get; set; }
         public static string MaxMemory { get; set; }
+        public static string OperationalSystem { get; set; }
+        public static string OperationalSystemArchitecture { get; set; }
+        public static string ApplicationFramework { get; set; }
 
         public GCInfoOptions() { }
 
@@ -13,6 +18,13 @@
         {
             AllocatedMemory = string.Empty;
             TotalAvailableMemory = string.Empty;
+        }
+
+        public static void SetOperationalSystem()
+        {
+            OperationalSystemArchitecture = RuntimeInformation.OSArchitecture.ToString();
+            OperationalSystem = RuntimeInformation.OSDescription;
+            ApplicationFramework = RuntimeInformation.FrameworkDescription;
         }
     }
 }

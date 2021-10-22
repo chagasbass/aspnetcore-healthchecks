@@ -28,7 +28,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/PlataformaDPVAT/_packaging/RepositorioSeguradoraLider/nuget/v3/index.json": {}
+          "https://pkgs.dev.azure.com/restoque-devops/_packaging/restoque-devops@Local/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {

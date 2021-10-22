@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3+8DF/CGaOpSk46PvvYYAAUNv/fSpE1dXwY3htbtwWr3Eta/ybMub30FkpmfO3HuXW+kdivoYKKyfDvFwuBZ8Q==",
+  "dgSpecHash": "8dKsVkBahViivO4WAs02lw/S2ItzDyE9/RUf/eUg832LU4NLKm9FolJPkaevtLurV3Mc8PCKVefvL/uC4WVqiw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks\\AspnetCore.Healthchecks.csproj",
   "expectedPackageFiles": [

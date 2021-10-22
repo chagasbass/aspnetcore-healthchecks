@@ -211,3 +211,4 @@ C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\staticwe
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\scopedcss\bundle\AspnetCore.Healthchecks.styles.css
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.RazorTargetAssemblyInfo.cache
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.genruntimeconfig.cache
+C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.csproj.CopyComplete

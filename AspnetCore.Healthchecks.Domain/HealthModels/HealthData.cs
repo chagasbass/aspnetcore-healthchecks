@@ -1,4 +1,4 @@
-﻿namespace AspnetCore.Healthchecks.Domain.Entities
+﻿namespace AspnetCore.Healthchecks.Domain.HealthModels
 {
     public class HealthData
     {

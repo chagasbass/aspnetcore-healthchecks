@@ -2,7 +2,7 @@
 {
     public static class HealthNames
     {
-        public const string MEMORY_HEALTHCHECK = "Memory info";
+        public const string MEMORY_HEALTHCHECK = "APP Memory info";
         public const string SQLSERVER_HEALTHCHECK = "SqlServer Database";
         public const string EXTERNALSERVICE_HEALTHCHECK = "Address Service";
         public const string SELF_HEALTHCHECK = "Self";

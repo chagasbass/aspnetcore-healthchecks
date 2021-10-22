@@ -1,17 +1,12 @@
 ﻿using AspnetCore.Healthchecks.Domain.Configurations;
-using AspnetCore.Healthchecks.Domain.Entities;
+using AspnetCore.Healthchecks.Extensions;
 using AspnetCore.Healthchecks.Healthchecks;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System;
-using System.Linq;
 using System.Net.Mime;
-using System.Text.Encodings.Web;
-using System.Text.Json;
 
 namespace AspnetCore.Healthchecks.Configurations
 {
@@ -47,62 +42,12 @@ namespace AspnetCore.Healthchecks.Configurations
                  {
                      ResponseWriter = async (context, report) =>
                      {
-                         string result = GetHealthStatusData(report);
+                         string result = report.AddHealthStatusData();
 
                          context.Response.ContentType = MediaTypeNames.Application.Json;
-
                          await context.Response.WriteAsync(result);
-
                      }
                  });
-        }
-
-        private static string GetHealthStatusData(HealthReport report)
-        {
-            var healthcheckInformation = new HealthInformation
-            {
-                Name = "Application HealthChecks",
-                Version = "V1",
-                Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-            };
-
-            var entries = report.Entries.ToList();
-
-            foreach (var x in entries)
-            {
-                if (x.Key.Equals(HealthNames.MEMORY_HEALTHCHECK))
-                {
-                    healthcheckInformation.MemoryHealth = new HealthDataMemory()
-                    {
-                        Name = x.Key,
-                        Description = x.Value.Description,
-                        Status = x.Value.Status.ToString(),
-                        AllocatedMemory = GCInfoOptions.AllocatedMemory,
-                        TotalAvailableMemory = GCInfoOptions.TotalAvailableMemory,
-                        MaxMemory = GCInfoOptions.MaxMemory
-                    };
-                }
-                else
-                {
-                    healthcheckInformation.HealthDatas.Add(new HealthData
-                    {
-                        Name = x.Key,
-                        Description = x.Value.Description,
-                        Status = x.Value.Status.ToString()
-                    });
-                }
-
-            }
-
-            var serializeOptions = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
-
-            var result = JsonSerializer.Serialize(healthcheckInformation, serializeOptions);
-
-            return result;
         }
 
         public static void UserHealthCheckUi(this IApplicationBuilder app)
