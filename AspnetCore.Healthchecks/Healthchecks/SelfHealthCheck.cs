@@ -14,7 +14,7 @@ namespace AspnetCore.Healthchecks.Healthchecks
         {
             return Task.FromResult(new HealthCheckResult(
                 HealthStatus.Healthy,
-                description: HealthNames.SELF_DESCRIPTION));
+                description: HealthNames.SelfDescription));
         }
     }
 }

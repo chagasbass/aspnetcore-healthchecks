@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AspnetCore.Healthchecks.Data.Mappings
 {
+    /// <summary>
+    /// Mapeamento da entidade Address
+    /// </summary>
     public class AddressMapping : IEntityTypeConfiguration<Address>
     {
         public void Configure(EntityTypeBuilder<Address> builder)

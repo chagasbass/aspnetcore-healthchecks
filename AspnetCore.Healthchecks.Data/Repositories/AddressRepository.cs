@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace AspnetCore.Healthchecks.Data.Repositories
 {
+    /// <summary>
+    /// Implementação do repositório de Address
+    /// </summary>
     public class AddressRepository : IAddressRepository
     {
         private readonly DataContext _context;

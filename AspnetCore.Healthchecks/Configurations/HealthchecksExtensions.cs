@@ -10,23 +10,32 @@ using System.Net.Mime;
 
 namespace AspnetCore.Healthchecks.Configurations
 {
+    /// <summary>
+    /// Extensão para configuração de healthchecks
+    /// </summary>
     public static class HealthchecksExtensions
     {
+
+        /// <summary>
+        /// Efetua a configuração dos healthchecks customizados e da UI da dashboard que será usada
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection ConfigureHealthChecks(this IServiceCollection services)
         {
             #region healthchecks customizados
             services.AddHealthChecks()
-                    .AddGCInfoCheck(HealthNames.MEMORY_HEALTHCHECK)
-                    .AddCheck<SqlServerHealthcheck>(HealthNames.SQLSERVER_HEALTHCHECK)
-                    .AddCheck<AddressExternalServiceHealthcheck>(HealthNames.EXTERNALSERVICE_HEALTHCHECK)
-                    .AddSelfCheck(HealthNames.SELF_HEALTHCHECK);
+                    .AddGCInfoCheck(HealthNames.MemoryHealthcheck, default, HealthNames.MemoryTags)
+                    .AddCheck<SqlServerHealthcheck>(HealthNames.SqlServerHealthcheck, default, HealthNames.DatabaseTags)
+                    .AddCheck<AddressExternalServiceHealthcheck>(HealthNames.ExternalServiceHealthcheck, default, HealthNames.ExternalServicesTags)
+                    .AddSelfCheck(HealthNames.SelfHealthcheck, default, HealthNames.SelfTags);
 
             #endregion
 
             #region healthcheckUI
             services.AddHealthChecksUI(setupSettings: setup =>
             {
-                setup.SetEvaluationTimeInSeconds(60);
+                setup.SetEvaluationTimeInSeconds(20);
                 setup.MaximumHistoryEntriesPerEndpoint(50);
             }).AddInMemoryStorage();
             #endregion
@@ -34,6 +43,11 @@ namespace AspnetCore.Healthchecks.Configurations
             return services;
         }
 
+        /// <summary>
+        /// Extensão que para customizar o as informações dos healthchecks e retornar um json customizado
+        /// em um determinado endpoint
+        /// </summary>
+        /// <param name="app"></param>
         public static void UseHealthChecks(this IApplicationBuilder app)
         {
             app.UseHealthChecks("/app-status");
@@ -50,6 +64,10 @@ namespace AspnetCore.Healthchecks.Configurations
                  });
         }
 
+        /// <summary>
+        /// Configuração do middlelware do healthcheck UI
+        /// </summary>
+        /// <param name="app"></param>
         public static void UserHealthCheckUi(this IApplicationBuilder app)
         {
             app.UseHealthChecks("/healthchecks-data-ui", new HealthCheckOptions()

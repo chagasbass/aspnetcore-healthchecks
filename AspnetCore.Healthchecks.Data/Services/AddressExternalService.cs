@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AspnetCore.Healthchecks.Data.Services
 {
+    /// <summary>
+    /// Implementação do Serviço externo de Address
+    /// </summary>
     public class AddressExternalService : IAddressExternalService
     {
         private readonly BaseConfigurationOptions _baseConfigurationOptions;

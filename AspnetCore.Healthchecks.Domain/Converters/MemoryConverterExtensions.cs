@@ -2,6 +2,10 @@
 
 namespace AspnetCore.Healthchecks.Domain.Converters
 {
+    /// <summary>
+    /// Extensão para efetuar a conversão para mostrar o valor de memória com seus
+    /// respectivas unidades
+    /// </summary>
     public static class MemoryConverterExtensions
     {
         public static string ConvertMemorySize(long size)

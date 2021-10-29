@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AspnetCore.Healthchecks.Configurations
 {
+    /// <summary>
+    /// Extensão para a resolução de dependência da aplicação
+    /// </summary>
     public static class DIConfigurationExtensions
     {
         public static IServiceCollection AddDIConfigurations(this IServiceCollection services)

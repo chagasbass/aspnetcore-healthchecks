@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AspnetCore.Healthchecks.Healthchecks
 {
+    /// <summary>
+    /// Healthcheck customizado para verificar o consumo de memória da aplicação
+    /// </summary>
     public class GarbageCollectorHealthcheck : IHealthCheck
     {
         private readonly GCInfoOptions _options;
@@ -32,12 +35,12 @@ namespace AspnetCore.Healthchecks.Healthchecks
             {
                 return new HealthCheckResult(
                                               HealthStatus.Degraded,
-                                              description: HealthNames.MEMORY_DESCRIPTION);
+                                              description: HealthNames.MemoryDescription);
             }
 
             return new HealthCheckResult(
                                           HealthStatus.Healthy,
-                                          description: HealthNames.MEMORY_DESCRIPTION);
+                                          description: HealthNames.MemoryDescription);
         }
     }
 }

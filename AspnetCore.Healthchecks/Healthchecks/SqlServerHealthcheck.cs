@@ -21,22 +21,22 @@ namespace AspnetCore.Healthchecks.Healthchecks
 
         public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default(CancellationToken))
         {
-            using var conexao = new SqlConnection(_baseConfigurationOptions.DatabaseConn);
+            using var dbConnection = new SqlConnection(_baseConfigurationOptions.DatabaseConn);
 
             try
             {
-                await conexao.OpenAsync();
+                await dbConnection.OpenAsync();
             }
             catch
             {
                 return new HealthCheckResult(
                 HealthStatus.Unhealthy,
-                description: HealthNames.SQLSERVER_DESCRIPTION);
+                description: HealthNames.SqlServerDescriptionError);
             }
 
             return new HealthCheckResult(
                HealthStatus.Healthy,
-               description: HealthNames.SQLSERVER_DESCRIPTION);
+               description: HealthNames.SqlServerDescription);
         }
     }
 }

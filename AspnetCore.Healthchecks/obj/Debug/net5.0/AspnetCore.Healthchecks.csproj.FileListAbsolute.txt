@@ -100,7 +100,6 @@ C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\staticw
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\staticwebassets\AspnetCore.Healthchecks.StaticWebAssets.xml
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\scopedcss\bundle\AspnetCore.Healthchecks.styles.css
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.RazorTargetAssemblyInfo.cache
-C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.csproj.CopyComplete
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.dll
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\ref\AspnetCore.Healthchecks.dll
 C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.pdb

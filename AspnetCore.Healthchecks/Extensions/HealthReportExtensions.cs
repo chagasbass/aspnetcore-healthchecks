@@ -8,14 +8,18 @@ using System.Text.Json;
 
 namespace AspnetCore.Healthchecks.Extensions
 {
+    /// <summary>
+    /// Extension da classe HealthcheckReport para recuperar as informações dos entries dos healtchecks
+    /// da aplicação.
+    /// </summary>
     public static class HealthReportExtensions
     {
+        const string ApplicationName = "Application HealthChecks";
         public static string AddHealthStatusData(this HealthReport report)
         {
             var healthcheckInformation = new HealthInformation
             {
-                Name = "Application HealthChecks",
-                Version = "V1",
+                Name = ApplicationName,
                 Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
             };
 
@@ -23,7 +27,7 @@ namespace AspnetCore.Healthchecks.Extensions
 
             foreach (var entrie in entries)
             {
-                if (entrie.Key.Equals(HealthNames.MEMORY_HEALTHCHECK))
+                if (entrie.Key.Equals(HealthNames.MemoryHealthcheck))
                 {
                     healthcheckInformation.ApplicationMemoryHealth = new HealthDataApplicationMemory()
                     {
@@ -56,9 +60,9 @@ namespace AspnetCore.Healthchecks.Extensions
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
 
-            var result = JsonSerializer.Serialize(healthcheckInformation, serializeOptions);
+            var healthResult = JsonSerializer.Serialize(healthcheckInformation, serializeOptions);
 
-            return result;
+            return healthResult;
         }
     }
 }

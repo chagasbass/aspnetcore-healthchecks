@@ -1218,26 +1218,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Thiago Chagas\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\thiago.chagas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
+      "projectUniqueName": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
       "projectName": "AspnetCore.Healthchecks.Data",
-      "projectPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
-      "packagesPath": "C:\\Users\\Thiago Chagas\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\obj\\",
+      "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\AspnetCore.Healthchecks.Data.csproj",
+      "packagesPath": "C:\\Users\\thiago.chagas\\.nuget\\packages\\",
+      "outputPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Data\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Thiago Chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\thiago.chagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1245,15 +1238,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/restoque-devops/_packaging/restoque-devops@Local/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
-              "projectPath": "C:\\Dev\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj"
+            "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj": {
+              "projectPath": "C:\\devs\\aspnetcore-healthchecks\\AspnetCore.Healthchecks.Domain\\AspnetCore.Healthchecks.Domain.csproj"
             }
           }
         }

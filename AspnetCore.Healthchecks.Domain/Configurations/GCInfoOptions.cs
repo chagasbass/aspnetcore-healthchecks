@@ -2,6 +2,9 @@
 
 namespace AspnetCore.Healthchecks.Domain.Configurations
 {
+    /// <summary>
+    /// Classe que representa os dados para monitorar o consumo de memória da aplicação
+    /// </summary>
     public class GCInfoOptions
     {
         public long Threshold { get; set; } = 1024L * 1024L * 1024L;

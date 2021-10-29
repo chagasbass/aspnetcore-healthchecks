@@ -2,6 +2,9 @@
 
 namespace AspnetCore.Healthchecks.Domain.Entities
 {
+    /// <summary>
+    /// Entidade que reprenta o Endereço
+    /// </summary>
     public class Address
     {
         public Guid Id { get; set; }

@@ -2,6 +2,9 @@
 
 namespace AspnetCore.Healthchecks.Domain.Queries
 {
+    /// <summary>
+    /// Classe que representa o retorno do serviço que será consumido
+    /// </summary>
     public class AddressQuery
     {
         [JsonPropertyName("cep")]

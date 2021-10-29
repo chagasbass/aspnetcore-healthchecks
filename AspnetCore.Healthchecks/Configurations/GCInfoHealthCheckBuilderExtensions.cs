@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace AspnetCore.Healthchecks.Configurations
 {
+    /// <summary>
+    /// Extension para HealthCheck do GarbageCollector
+    /// </summary>
     public static class GCInfoHealthCheckBuilderExtensions
     {
         public static IHealthChecksBuilder AddGCInfoCheck(

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AspnetCore.Healthchecks.Healthchecks
 {
+    /// <summary>
+    /// Healthcheck customizado para o serviço de endereço
+    /// </summary>
     public class AddressExternalServiceHealthcheck : IHealthCheck
     {
         private readonly IHttpClientFactory _clientFactory;
@@ -40,18 +43,18 @@ namespace AspnetCore.Healthchecks.Healthchecks
                 if (!response.IsSuccessStatusCode)
                     return new HealthCheckResult(
                HealthStatus.Unhealthy,
-               description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
+               description: HealthNames.ExternalServiceDescription);
             }
             catch
             {
                 return new HealthCheckResult(
                 HealthStatus.Unhealthy,
-                description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
+                description: HealthNames.ExternalServiceDescription);
             }
 
             return new HealthCheckResult(
                 HealthStatus.Healthy,
-                description: HealthNames.EXTERNALSERVICE_DESCRIPTION);
+                description: HealthNames.ExternalServiceDescription);
         }
     }
 }
