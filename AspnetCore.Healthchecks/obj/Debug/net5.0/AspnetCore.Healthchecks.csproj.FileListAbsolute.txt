@@ -211,3 +211,4 @@ C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\scopedcs
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.RazorTargetAssemblyInfo.cache
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.genruntimeconfig.cache
 C:\Dev\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.csproj.CopyComplete
+C:\devs\aspnetcore-healthchecks\AspnetCore.Healthchecks\obj\Debug\net5.0\AspnetCore.Healthchecks.csproj.CopyComplete

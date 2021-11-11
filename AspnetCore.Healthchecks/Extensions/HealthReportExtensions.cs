@@ -25,11 +25,11 @@ namespace AspnetCore.Healthchecks.Extensions
 
             var entries = report.Entries.ToList();
 
-            foreach (var entrie in entries)
+            entries.ForEach(entrie =>
             {
                 if (entrie.Key.Equals(HealthNames.MemoryHealthcheck))
                 {
-                    healthcheckInformation.ApplicationMemoryHealth = new HealthDataApplicationMemory()
+                    healthcheckInformation.ApplicationMemoryHealth = new HealthDataApplicationMemory
                     {
                         Name = entrie.Key,
                         Description = entrie.Value.Description,
@@ -51,8 +51,7 @@ namespace AspnetCore.Healthchecks.Extensions
                         Status = entrie.Value.Status.ToString()
                     });
                 }
-
-            }
+            });
 
             var serializeOptions = new JsonSerializerOptions
             {

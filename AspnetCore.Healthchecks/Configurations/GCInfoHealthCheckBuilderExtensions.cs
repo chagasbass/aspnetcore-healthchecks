@@ -18,10 +18,10 @@ namespace AspnetCore.Healthchecks.Configurations
             IEnumerable<string> tags = null,
             long? thresholdInBytes = null)
         {
-            // Register a check of type GCInfo
+            // Registrando o Healthcheck customizado de GCInfo
             builder.AddCheck<GarbageCollectorHealthcheck>(name, failureStatus ?? HealthStatus.Degraded, tags);
 
-            // Configure named options to pass the threshold into the check.
+            //Configurando o valor de Threshold usando Options Pattern
             if (thresholdInBytes.HasValue)
             {
                 builder.Services.Configure<GCInfoOptions>(name, options =>

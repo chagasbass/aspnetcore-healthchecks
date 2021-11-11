@@ -14,7 +14,7 @@ namespace AspnetCore.Healthchecks.Data.Mappings
             builder.ToTable("ADDRESS");
             builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.CEP)
+            builder.Property(e => e.Cep)
                   .HasMaxLength(8)
                   .IsRequired();
 

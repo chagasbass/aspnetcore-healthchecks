@@ -3,12 +3,12 @@
 namespace AspnetCore.Healthchecks.Domain.Entities
 {
     /// <summary>
-    /// Entidade que reprenta o Endereço
+    /// Entidade que representa o Endereço
     /// </summary>
     public class Address
     {
         public Guid Id { get; set; }
-        public string CEP { get; set; }
+        public string Cep { get; set; }
         public string Street { get; set; }
         public string District { get; set; }
         public string City { get; set; }

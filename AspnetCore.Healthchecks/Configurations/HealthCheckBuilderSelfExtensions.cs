@@ -12,7 +12,7 @@ namespace AspnetCore.Healthchecks.Configurations
     {
         public static IHealthChecksBuilder AddSelfCheck(this IHealthChecksBuilder builder, string name, HealthStatus? failureStatus = null, IEnumerable<string> tags = null)
         {
-            // Register a check of type SelfHealthCheck
+            // Registrando o healthcheck customizado SelfHealthCheck
             builder.AddCheck<SelfHealthCheck>(name, failureStatus ?? HealthStatus.Degraded, tags);
 
             return builder;

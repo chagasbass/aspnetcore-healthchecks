@@ -33,11 +33,13 @@ namespace AspnetCore.Healthchecks.Healthchecks
         public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
             var url = _baseConfigurationOptions.AddressService.Replace("my_cep", CEP);
+
             using var client = _clientFactory.CreateClient();
 
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
+
                 var response = await client.SendAsync(request);
 
                 if (!response.IsSuccessStatusCode)

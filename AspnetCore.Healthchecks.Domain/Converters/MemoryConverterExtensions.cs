@@ -12,19 +12,19 @@ namespace AspnetCore.Healthchecks.Domain.Converters
         {
             var newSize = Convert.ToDouble(size);
 
-            String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB" };
+            var units = new string[] { "B", "KB", "MB", "GB", "TB", "PB" };
 
-            double mod = 1024.0;
+            var mod = 1024.0;
 
-            int i = 0;
+            var iSizeCount = 0;
 
             while (newSize >= mod)
             {
                 newSize /= mod;
-                i++;
+                iSizeCount++;
             }
 
-            return Math.Round(newSize) + units[i];
+            return Math.Round(newSize) + units[iSizeCount];
         }
     }
 }

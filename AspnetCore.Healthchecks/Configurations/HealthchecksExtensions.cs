@@ -56,7 +56,7 @@ namespace AspnetCore.Healthchecks.Configurations
                  {
                      ResponseWriter = async (context, report) =>
                      {
-                         string result = report.AddHealthStatusData();
+                         var result = report.AddHealthStatusData();
 
                          context.Response.ContentType = MediaTypeNames.Application.Json;
                          await context.Response.WriteAsync(result);
@@ -70,6 +70,7 @@ namespace AspnetCore.Healthchecks.Configurations
         /// <param name="app"></param>
         public static void UserHealthCheckUi(this IApplicationBuilder app)
         {
+            //Add o middleware no pipeline
             app.UseHealthChecks("/healthchecks-data-ui", new HealthCheckOptions()
             {
                 Predicate = _ => true,

@@ -25,9 +25,9 @@ namespace AspnetCore.Healthchecks.Data.Services
 
         private HttpRequestMessage CreateRequest(string cep)
         {
-
             //viacep.com.br/ws/24130110/json/
             var cepWithoutMask = cep.Replace("-", string.Empty);
+
             var url = _baseConfigurationOptions.AddressService.Replace("my_cep", cepWithoutMask);
 
             return new HttpRequestMessage(HttpMethod.Get, url);
@@ -46,6 +46,7 @@ namespace AspnetCore.Healthchecks.Data.Services
             if (addressResponse.IsSuccessStatusCode)
             {
                 var response = await addressResponse.Content.ReadAsStringAsync();
+
                 addressQuery = JsonSerializer.Deserialize<AddressQuery>(response);
             }
 
